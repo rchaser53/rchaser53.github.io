@@ -1,1 +1,26 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- This is needed for Google Chrome support. -->
+    <!-- <link rel="manifest" href="manifest.json"> -->
+  </head>
+  <body>
+    <form>
+      Notification delay: <input id="notification-delay" type="number" value="5"> seconds
+      Notification Time-To-Live: <input id="notification-ttl" type="number" value="0"> seconds
+    </form>
+    
+    <p>Either click this button to ask the server to send a notification:
+      <button id="doIt">Try to conquer Italy!</button>
+    </p>
+    <p>Or use 
+      <b>curl</b>on your command line to send the notification:
+    </p>
+    <span id="curl">curl -H "TTL: 60" -X POST https://android.googleapis.com/gcm/send/d64JVkzY99M:APA91bHmGeoNwh3qN5a12KUzkx8ITfCdxZHZclP_pjMszqz6RiJ5Lf9yHeYXTeNGCRAeZfvsuh2VoMyV1CdXEtO-in9UZYow_o-AZHSpqg-CCKrmFoUhXypcyl8N5wcIsdYZRbqz2JE6</span>
+    
+    <p>N.B.: The curl command only works for push services implementing the Web Push standard (GCM, the push service used by Google Chrome, currently doesn't).</p>
+    
+    <script src="./index.js"></script>
+  </body>
+</html>
